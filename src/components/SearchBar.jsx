@@ -3,7 +3,7 @@
 
 import React, { useState } from "react";
 
-function SearchBar() {
+function SearchBar({ searchQuery, setSearchQuery, setSearchResults }) {
   const [searchTerm, setSearchTerm] = useState("");
 
   function handleInputChange(event) {
