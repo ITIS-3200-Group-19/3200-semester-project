@@ -1,7 +1,7 @@
 // This file is for the login form component.
 // It will contain the form for users to log in to their accounts.
 
-function LoginForm() {
+function LoginForm({ setIsLoggedIn }) {
   function handleSubmit(event) {
     event.preventDefault(); // Prevent the default form submission behavior.
     // Handle login logic here (e.g., send credentials to the server to check if they are valid,).
@@ -9,14 +9,26 @@ function LoginForm() {
   }
 
   return (
-    <div className="login-form">
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
+    <div className="login-container">
+      <form className="login-form" onSubmit={handleSubmit}>
+        <h2>Login</h2>
         <label htmlFor="username">Username:</label>
-        <input type="text" id="username" name="username" required />
+        <input
+          type="text"
+          id="username"
+          name="username"
+          required
+          placeholder="Username"
+        />
         <br />
         <label htmlFor="password">Password:</label>
-        <input type="password" id="password" name="password" required />
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+          placeholder="Password"
+        />
         <br />
         <button type="submit">Login</button>
       </form>
