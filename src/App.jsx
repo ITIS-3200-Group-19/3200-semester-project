@@ -5,8 +5,8 @@ import SearchBar from "./components/SearchBar.jsx";
 import ResultsDisplay from "./components/ResultsDisplay.jsx";
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // State to track if the user is logged in
-  const [mode, setMode] = useState("vulnerable"); // State to track the mode (vulnerable or secure)
+  const [isLoggedIn, setIsLoggedIn] = useState(true); // State to track if the user is logged in
+  const [mode, setMode] = useState("Vulnerable"); // State to track the mode (vulnerable or secure)
   const [searchResults, setSearchResults] = useState([]); // State to store search results
   const [searchQuery, setSearchQuery] = useState(""); // State to store the current search query
 
@@ -14,15 +14,17 @@ function App() {
     <div className="app">
       <nav>
         {/* App title */}
-        <h1>3200 Semester Project</h1>
+        <h1>QueryShield</h1>
+        <div className="nav-right">
+          {/* Mode toggle (vulnerable/secure) */}
+          <span className="mode-label">Mode: {mode}</span>
+          <ModeToggle mode={mode} setMode={setMode} />
 
-        {/* Mode toggle (vulnerable/secure) */}
-        <ModeToggle mode={mode} setMode={setMode} />
-
-        {/* Logout button */}
-        {isLoggedIn && ( // Show logout button only if the user is logged in
-          <button onClick={() => setIsLoggedIn(false)}>Logout</button>
-        )}
+          {/* Logout button */}
+          <button className="logout-btn" onClick={() => setIsLoggedIn(false)}>
+            Logout
+          </button>
+        </div>
       </nav>
 
       {!isLoggedIn ? (
