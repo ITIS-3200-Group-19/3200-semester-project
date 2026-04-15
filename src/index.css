@@ -167,6 +167,12 @@ input[type="checkbox"]:checked + .toggle::before {
   background-color: var(--darker-accent-color);
 }
 
+.error-message {
+  color: var(--darker-accent-color);
+  font-weight: bold;
+  text-align: center;
+}
+
 /* Search Bar Styles */
 
 .search-container {
