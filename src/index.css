@@ -11,6 +11,7 @@
   --text-color: #ffffff; /* White for primary text */
   --text-color-secondary: #a3aab5; /* A lighter gray for secondary text */
   --text-color-dark: #2a3761; /* A dark gray for text on light backgrounds */
+  --text-color-dark-secondary: #1f2d51; /* A darker gray for secondary text on light backgrounds */
 }
 
 body {
@@ -30,6 +31,9 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .nav-right {
@@ -163,6 +167,12 @@ input[type="checkbox"]:checked + .toggle::before {
   background-color: var(--darker-accent-color);
 }
 
+.error-message {
+  color: var(--darker-accent-color);
+  font-weight: bold;
+  text-align: center;
+}
+
 /* Search Bar Styles */
 
 .search-container {
@@ -217,4 +227,38 @@ input[type="checkbox"]:checked + .toggle::before {
 .search-btn:hover {
   opacity: 1;
   cursor: pointer;
+}
+
+/* Results list styling */
+.results-container {
+  background-color: #ffffff;
+  padding: 2rem;
+}
+
+.results-header {
+  color: var(--text-color-dark);
+  font-size: 28px;
+  margin-bottom: 3rem;
+}
+
+.result-list {
+  list-style: none;
+  padding: 0;
+}
+
+.result-list-item {
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  background-color: var(--color-card);
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.result-list-item h3 {
+  margin: 0 0 0.5rem 0;
+  color: var(--accent-color);
+}
+.result-list-item p {
+  margin: 0;
+  color: var(--text-color-dark-secondary);
 }

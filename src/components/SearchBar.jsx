@@ -10,7 +10,8 @@ function SearchBar({ searchQuery, setSearchQuery, setSearchResults }) {
     setSearchTerm(event.target.value);
   }
 
-  function handleSearchBtnClick() {
+  function handleSearchBtnClick(event) {
+    event.preventDefault(); // Prevent the default form submission behavior
     if (searchTerm.trim() !== "") {
       // Perform search logic here or call a function to handle the search.
     }
@@ -18,7 +19,8 @@ function SearchBar({ searchQuery, setSearchQuery, setSearchResults }) {
 
   function handleEnterKeyDown(event) {
     if (event.key === "Enter") {
-      handleSearchBtnClick();
+      // Check if the Enter key was pressed
+      handleSearchBtnClick(event); // Call the search button click handler
     }
   }
 

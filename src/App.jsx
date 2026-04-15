@@ -5,7 +5,7 @@ import SearchBar from "./components/SearchBar.jsx";
 import ResultsDisplay from "./components/ResultsDisplay.jsx";
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(true); // State to track if the user is logged in
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // State to track if the user is logged in
   const [mode, setMode] = useState("Vulnerable"); // State to track the mode (vulnerable or secure)
   const [searchResults, setSearchResults] = useState([]); // State to store search results
   const [searchQuery, setSearchQuery] = useState(""); // State to store the current search query
@@ -29,7 +29,7 @@ function App() {
 
       {!isLoggedIn ? (
         // Pass the setter for logged-in state to the LoginForm component
-        <LoginForm setIsLoggedIn={setIsLoggedIn} />
+        <LoginForm setIsLoggedIn={setIsLoggedIn} mode={mode} />
       ) : (
         // If the user is logged in, show the search bar and results display components
         <>
