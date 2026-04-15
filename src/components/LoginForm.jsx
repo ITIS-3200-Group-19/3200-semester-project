@@ -6,6 +6,9 @@ function LoginForm({ setIsLoggedIn }) {
     event.preventDefault(); // Prevent the default form submission behavior.
     // Handle login logic here (e.g., send credentials to the server to check if they are valid,).
     // Set logged-in state if successful, or show an error message if not.
+
+    // For now, we will just set logged-in to true on form submission for testing purposes.
+    setIsLoggedIn(true);
   }
 
   return (
