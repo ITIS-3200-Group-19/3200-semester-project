@@ -3,7 +3,13 @@
 
 import React, { useState } from "react";
 
-function SearchBar({ searchQuery, setSearchQuery, setSearchResults }) {
+function SearchBar({
+  searchQuery,
+  setSearchQuery,
+  setSearchResults,
+  showSearchQuery,
+  mode,
+}) {
   const [searchTerm, setSearchTerm] = useState("");
 
   function handleInputChange(event) {
@@ -43,6 +49,12 @@ function SearchBar({ searchQuery, setSearchQuery, setSearchResults }) {
           &#x26B2;
         </button>
       </form>
+      {showSearchQuery && (
+        <span className={`query-display-${mode.toLowerCase()}`}>
+          Current ({mode === "Vulnerable" ? "Vulnerable" : "Secure"}) Search
+          Query: {searchQuery}
+        </span>
+      )}
     </div>
   );
 }
