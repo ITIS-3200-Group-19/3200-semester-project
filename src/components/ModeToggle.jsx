@@ -6,12 +6,12 @@ function ModeToggle({ mode, setMode }) {
     <div className="toggle-switch">
       <input
         type="checkbox"
-        id="switch"
+        id="mode-toggle-switch"
         onChange={() =>
           setMode(mode === "Vulnerable" ? "Secure" : "Vulnerable")
         }
       ></input>
-      <label htmlFor="switch" className="toggle">
+      <label htmlFor="mode-toggle-switch" className="toggle">
         {""}
       </label>
     </div>
