@@ -96,7 +96,7 @@ router.post("/", async (req, res) => {
             const hashedPassword = derivedKey.toString("hex");
 
             // Compare the hashed password with the stored hashed password in the database.
-            if (hashedPassword === user.password) {
+            if (hashedPassword === user.hashedPasswords) {
               // TODO: get hashedPassword into database.
               res.json({
                 success: true,
