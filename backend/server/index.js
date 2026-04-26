@@ -18,11 +18,12 @@ app.use(express.json());
 
 // Routes section
 app.use("/health", require("./routing/health")); // checks if the backend server is running
-//http://localhost:3000/health
+// http://localhost:3000/health
 app.use("/test-db", require("./routing/testing_database")); // verifies if the SQL database is connected
-http://localhost:3000/test-db
+// http://localhost:3000/test-db
 app.use("/user", require("./routing/user")); // grabs the user data and returns it
-http://localhost:3000/user
+// http://localhost:3000/user
+app.use("/search", require("./routing/searchBar"));
 
 // Starts up the server and tells you if the server is running
 app.listen(PORT, () => {

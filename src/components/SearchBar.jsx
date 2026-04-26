@@ -16,10 +16,18 @@ function SearchBar({
     setSearchTerm(event.target.value);
   }
 
-  function handleSearchBtnClick(event) {
+  async function handleSearchBtnClick(event) {
     event.preventDefault(); // Prevent the default form submission behavior
-    if (searchTerm.trim() !== "") {
-      // Perform search logic here or call a function to handle the search.
+    if (searchTerm.trim() === "") return;
+    const respond = await fetch(
+      `http://localhost:3000/search?query=${encodeURIComponent(searchTerm)}&mode=${mode}`
+    );
+
+    const info = await respond.json();
+
+    if (DataTransfer.success) {
+      setSearchQuery(searchTerm);
+      setSearchResults(info.results);
     }
   }
 
@@ -29,6 +37,11 @@ function SearchBar({
       handleSearchBtnClick(event); // Call the search button click handler
     }
   }
+
+  const payload = [
+    "' OR 1=1 --"
+
+  ];
 
   return (
     <div className="search-container">

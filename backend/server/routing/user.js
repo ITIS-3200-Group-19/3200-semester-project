@@ -45,13 +45,22 @@ router.post("/api/login", async (req, res) => {
     try {
       const [rows] = await database.query(query);
 
-      res.json({
-        success: true, // If username found with such password, return success.
-        loginError: false,
-        hashingError: false, // Hashing error not relevant here but needs to be included.
-      });
+      //This checks to see if the user does exist
+      if (rows.length > 0) {
+        res.json({
+          success: true,
+          loginError: false,
+          hashingError: false,
+        });
+      } else {
+        res.status(401).json({
+          success: false,
+          loginError: true,
+          hashingError: false,
+        });
+      };
     } catch (err) {
-      res.status(401).json({
+      res.status(500).json({
         success: false, // No username found with such password, return failure.
         loginError: true,
         hashingError: false, // Hashing error not relvant here but needs to be included.
@@ -92,7 +101,13 @@ router.post("/api/login", async (req, res) => {
           64,
           { N: 16384, r: 8, p: 1 },
           (err, derivedKey) => {
-            if (err) throw err;
+            if (err) {
+              return res.json({
+                success: false,
+                loginError: false,
+                hashingError: true,
+              });
+            }
             // Convert the derived key to a hexadecimal string for comparison.
             const hashedPassword = derivedKey.toString("hex");
 
@@ -105,7 +120,11 @@ router.post("/api/login", async (req, res) => {
                 hashingError: false,
               });
             } else {
-              throw new Error("Invalid password");
+              res.status(401).json({
+              success: false,
+              loginError: true,
+              hashingError: false,
+            });
             }
           },
         );
