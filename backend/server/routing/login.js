@@ -35,6 +35,15 @@ router.post("/", async (req, res) => {
     try {
       const [rows] = await database.query(query);
 
+      if (rows.length === 0) {
+        // No user found with the provided username, return login error.
+        return res.status(401).json({
+          success: false,
+          loginError: true,
+          hashingError: false,
+        });
+      }
+
       res.json({
         success: true, // If username found with such password, return success.
         loginError: false,
