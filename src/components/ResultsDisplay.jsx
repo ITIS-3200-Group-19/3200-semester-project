@@ -4,11 +4,11 @@
 function ResultsDisplay({ results }) {
   return (
     <div className="results-container">
-      <h2>Results for your search:</h2>
+      <h2 className="results-header">Results for your search:</h2>
 
-      <ul>
+      <ul className="result-list">
         {results.map((user) => (
-          <li key={user.id}>
+          <li key={user.id} className="result-list-item">
             <h3>{user.username}</h3>
             <p>Mode: {user.mode}</p>
           </li>
