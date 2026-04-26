@@ -25,9 +25,6 @@ app.use("/user", require("./routing/user")); // grabs the user data and returns 
 //http://localhost:3000/user
 app.use("/login", require("./routing/login")); // handles user login requests
 //http://localhost:3000/login
-// http://localhost:3000/test-db
-app.use("/user", require("./routing/user")); // grabs the user data and returns it
-// http://localhost:3000/user
 app.use("/search", require("./routing/searchBar"));
 
 // Starts up the server and tells you if the server is running
