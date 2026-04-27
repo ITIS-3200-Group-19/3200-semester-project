@@ -25,7 +25,7 @@ function SearchBar({
 
     const info = await respond.json();
 
-    if (DataTransfer.success) {
+    if (info.success) {
       setSearchQuery(searchTerm);
       setSearchResults(info.results);
     }

@@ -10,14 +10,14 @@ router.get("/", async (req, res) => {
     const {query, mode} = req.query;
 
     if (!query) {
-        res.status(500).json({ success: false, error: err.message });
+        return res.status(400).json({ success: false, error: "query is missing" });
     }
 
     try {
         let sql;
 
         //vulnerable mode
-        if (mode == "Vulnerable") {
+        if (mode === "Vulnerable") {
             sql = `SELECT id, username, mode FROM User WHERE username LIKE '%${query}%'`;
         }
         //safe mode
@@ -26,15 +26,15 @@ router.get("/", async (req, res) => {
         }
 
         const [rows] =
-      mode === "Vulnerable"
-        ? await database.query(sql)
-        : await database.query(sql, [`%${query}%`]);
+            mode === "Vulnerable"
+                ? await database.query(sql)
+                : await database.query(sql, [`%${query}%`]);
 
     res.json({ success: true, results: rows });
   } catch (err) {
     res.status(500).json({ success: false, error: err.message });
   }
-    }
+}
 );
 //Router exporter
 module.exports = router;

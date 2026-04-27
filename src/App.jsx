@@ -45,6 +45,7 @@ function App() {
           <SearchBar
             searchQuery={searchQuery} // Pass the current search query to the SearchBar component
             setSearchQuery={setSearchQuery} // Pass setter for search query
+            setSearchResults={setSearchResults} // Shows the search results
             showSearchQuery={showSearchQuery} // Pass state for showing search query
             setShowSearchQuery={setShowSearchQuery} // Pass setter for showing search query
             mode={mode} // Pass the current mode for query display styling
