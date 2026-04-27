@@ -5,11 +5,13 @@ function ResultsDisplay({ results }) {
   return (
     <div className="results-container">
       <h2 className="results-header">Results for your search:</h2>
+      <p>Results: {results.length}</p>
 
       <ul className="result-list">
         {results.map((user) => (
           <li key={user.id} className="result-list-item">
-            <h3>{user.username}</h3>
+            <h3>ID: {user.id}</h3>
+            <h3>Username: {user.username}</h3>
             <p>Mode: {user.mode}</p>
           </li>
         ))}

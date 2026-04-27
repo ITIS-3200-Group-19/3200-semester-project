@@ -249,6 +249,7 @@ input[type="checkbox"]:checked + .toggle::before {
 /* Results list styling */
 .results-container {
   background-color: #ffffff;
+  color: black;
   padding: 2rem;
 }
 
