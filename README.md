@@ -15,8 +15,8 @@ Welcome to QueryShield, a project built as part of a semester-long project for t
 
 - Have Node.js installed from the official Node.js website.
 - Check that you have npm (cmd: `npm -v`) (typically installed with Node.js)
-- Make sure you also install MySQL workbench and have the databases for them too
-- 
+- Make sure you also install MySQL workbench and import the databases for them too as without them, the system won't function correctly
+- The two databases are in the database_source folder
 
 ### Running The Project:
 
