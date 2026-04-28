@@ -20,6 +20,7 @@ Welcome to QueryShield, a project built as part of a semester-long project for t
 
 - In the project, run `npm install`
 - Start development server using the command `npm run dev`
+- Make sure you have two terminals and run `npm run dev` for both of them. One for the 3200-semester-project folder and one for the backend folder
 
 ## Step-By-Step Attack Guides (& Examples):
 
