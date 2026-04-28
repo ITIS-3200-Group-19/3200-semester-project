@@ -48,6 +48,7 @@ Welcome to QueryShield, a project built as part of a semester-long project for t
 4. Log out of the program and now try the following:
 
 - Switch the program to "Secure" mode using the toggle slider and try logging in as you did in step 3. You should see that the SQL injection attack is no longer successful, and you are not able to log in.
+- Note: Doing this will end up causing the backend to disconnect and crash. Make sure you run `npm run dev` in the terminal of the backend again to get the program running correctly.
 
 5. Now, let's demonstrate the same actions but with the search page. The search page allows the user
    to query the database for whatever they wish. In "Vulnerable" mode, the search page is vulnerable to SQL injection, but in "Secure" mode, the search page is no longer vulnerable to SQL injection. Try the following:
