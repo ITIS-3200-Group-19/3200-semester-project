@@ -52,7 +52,7 @@ Welcome to QueryShield, a project built as part of a semester-long project for t
    to query the database for whatever they wish. In "Vulnerable" mode, the search page is vulnerable to SQL injection, but in "Secure" mode, the search page is no longer vulnerable to SQL injection. Try the following:
 
 - Switch the mode of the program back to "Vulnerable" first, then enable the toggle for the visibility of the search query. This will allow you to see the query that is being sent to the database.
-- In the search field, enter: "' OR 1=1-- " (excluding the double quotation marks and including the single). Again, remember the space at the end.
+- In the search field, enter: "' OR 1=1 -- " (excluding the double quotation marks and including the single). Again, remember the space at the end.
 - You should find that the data for all the users is returned.
 - Now, switch the program to "Secure" mode using the toggle slider and try the same thing again. Nothing should show in the search results now.
 
