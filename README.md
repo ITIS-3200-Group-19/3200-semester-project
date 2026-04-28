@@ -42,7 +42,7 @@ Welcome to QueryShield, a project built as part of a semester-long project for t
    Let's demonstrate the program's vulnerability to SQL injection by trying the following:
 
 - In the username field, enter any string. Ex: "username"
-- In the password field, enter "' OR 1=1-- " (excluding the double quotation marks and including the single). Remember the space at the end.
+- In the password field, enter "' OR 1=1 -- " (excluding the double quotation marks and including the single). Remember the space at the end.
 
 4. Log out of the program and now try the following:
 
